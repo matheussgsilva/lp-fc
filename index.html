@@ -5,7 +5,6 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="tailus ui html-vite and tailwindcss 3.1 boilerplate" />
     <title>Planilha Fluxo de Caixa | Zé Planilha</title>
 
     <link
@@ -13,9 +12,31 @@
         rel="stylesheet" />
 </head>
 
-<body class="min-h-screen bg-white selection:bg-primary/10 selection:text-primary">
+<body class="h-screen bg-white selection:bg-primary/10 selection:text-primary">
+    <!-- Modal -->
+    <div id="modal" class="hidden justify-center items-center w-screen h-screen z-50 bg-gray-700/50 fixed top-0 left-0 backdrop-blur">
+        <div class="bg-gray-100 flex flex-col justify-center items-center p-5 rounded shadow-lg w-full md:w-1/4">
+            <div id="confirmationText" class="mt-5"></div>
+            <div class="p-6 w-full">
+                <form class="" action="" method="post" id="formDemo">
+                    <div class="flex lg:flex-row md:flex-row sm:flex-col xs:flex-col gap-1 w-full">
+                        <div class="w-[150%]">
+                            <input type="email" name="email" id="email"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-2 py-3"
+                                placeholder="email@email.com" required>
+                            <span class="hidden text-center font-bold text-red-500 text-base mt-2" id="invalidEmailAlert">Formato de e-mail inválido!</span>
+                        </div>
+                        <button type="submit" id="modalButton"
+                            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-semibold rounded-lg text-base px-4 py-2.5 text-center">
+                            OK
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
     <!-- Hero -->
-    <div class="overflow-hidden h-screen">
+    <div class="overflow-hidden">
         <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-20">
             <div class="relative mx-auto max-w-4xl grid space-y-5 sm:space-y-10">
                 <!-- Title -->
@@ -33,7 +54,7 @@
                 <div class="flex justify-center items-center text-center sm:text-start">
                     <div class="flex-shrink-0 pb-5 sm:flex sm:pb-0 sm:pe-5">
                         <!-- Avatar Group -->
-                        <div class="mt-5 md:mt-0 flex justify-center -space-x-1 lg:pr-0 md:pr-0 sm:pr-2 xs:pr-2 lg:children:h-16 md:children:h-12 sm:children:h-8 xs:children:h-8 lg:children:w-16 md:children:w-12 sm:children:w-8 xs:children:w-8 children:rounded-full children:object-cover children:ring-2 children:ring-gray-100 md:mr-3 lg:mr-6">
+                        <div class="mt-5 md:mt-0 flex justify-center -space-x-8 lg:pr-0 md:pr-0 sm:pr-2 xs:pr-2 lg:children:h-14 md:children:h-10 sm:children:h-6 xs:children:h-6 lg:children:w-14 md:children:w-10 sm:children:w-6 xs:children:w-6 children:rounded-full children:object-cover children:ring-2 children:ring-gray-100 md:mr-3 lg:mr-6">
                             <img class="avatar" src="" alt="user avatar" width="50px" height="50px"/>
                             <img class="avatar" src="" alt="user avatar" width="50px" height="50px"/>
                             <img class="avatar" src="" alt="user avatar" width="50px" height="50px"/>
@@ -44,7 +65,7 @@
                     </div>
 
                     <div class="border-r sm:border-t-0 sm:border-s border-gray-400 w-32 h-px sm:w-auto sm:h-full mx-auto sm:mx-0"></div>
-
+                    
                     <div class="pt-0 mb-5 md:mb-0 md:ml-3 lg:ml-6">
                         <div>
                             <p class="text-lg font-semibold text-gray-800">Avaliação Google</p>
@@ -64,17 +85,17 @@
                         <div class="sm:flex-[1_0_0%] pb-2 sm:pb-0 border-r border-gray-300">
                             <label for="hs-hero-name-1" class="block text-sm font-medium"><span class="sr-only">Seu nome</span></label>
                             <input type="text" id="hs-hero-name-1"
-                                class="py-3 px-4 block w-full border-transparent rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500"
+                                class="py-3 px-4 block w-full border-transparent rounded-lg text-base focus:border-blue-500 focus:ring-blue-500"
                                 placeholder="Seu nome">
                         </div>
                         <div
                             class="pt-2 sm:pt-0 sm:ps-3 border-t border-gray-200 sm:border-t-0 sm:border-s sm:flex-[1_0_0%]">
                             <label for="hs-hero-email-1" class="block text-sm font-medium"><span class="sr-only">Seu e-mail</span></label>
                             <input type="email" id="hs-hero-email-1"
-                                class="py-3 px-4 block w-full border-transparent rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500"
+                                class="py-3 px-4 block w-full border-transparent rounded-lg text-base focus:border-blue-500 focus:ring-blue-500"
                                 placeholder="Seu e-mail">
                         </div>
-                        <div class="sm:flex-[0_0_auto] pt-2 sm:pt-0 grid sm:block">
+                        <div id="demoBtn" class="sm:flex-[0_0_auto] pt-2 sm:pt-0 grid sm:block">
                             <a class="py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
                             href="#">
                                 Receber Planilha Demonstração
@@ -82,8 +103,8 @@
                         </div>
                     </div>
                 </form>
-                <p class="text-red-500 text-xs md:text-base text-center">Por favor, insira um endereço de <span
-                        class="font-semibold">e-mail válido</span>, pois é para ele que enviaremos a planilha.</p>
+                <!-- <p class="text-red-500 text-xs md:text-base text-center">Por favor, insira um endereço de <span
+                        class="font-semibold">e-mail válido</span>, pois é para ele que enviaremos a planilha.</p> -->
                 <!-- End Form -->
 
                 <!-- SVG Element -->
@@ -127,7 +148,7 @@
     <!-- End Hero -->
 
     <!-- Hero -->
-    <div class="relative overflow-hidden">
+    <!-- <div class="relative overflow-hidden">
         <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-10">
             <div class="max-w-2xl text-center mx-auto">
                 <h1 class="block text-3xl font-bold text-gray-800 sm:text-4xl md:text-5xl">Veja o
@@ -163,17 +184,17 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- End Hero -->
     <footer class="mt-20 w-full max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto">
         <!-- Grid -->
         <div class="grid grid-cols-1 md:grid-cols-3 items-center gap-5">
-            <div class="flex justify-center md:justify-start">
+            <div class="flex justify-center md:justify-start items-center">
                 <img src="https://zeplanilha.com/fluxodecaixa/images/fluxodecaixa/3_200px.webp" alt="Logo Zé Planilha" width="100px" class="md:w-48">
             </div>
             <!-- End Col -->
 
-            <p class="text-sm md:text-base text-center">Esta planilha foi desenvolvida pela empresa Zé Planilha.</p>
+            <p class="text-sm md:text-base text-center">© 2024 MATHEUS L. Q. G. SOARES INFORMATICA LTDA CNPJ: 49.647.463/0001-39</p>
             <!-- End Col -->
 
             <!-- Social Brands -->
