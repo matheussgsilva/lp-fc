@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Planilha Fluxo de Caixa | Zé Planilha</title>
 
@@ -14,17 +14,19 @@
 
 <body class="h-screen bg-white selection:bg-primary/10 selection:text-primary">
     <!-- Modal -->
-    <div id="modal" class="hidden justify-center items-center w-screen h-screen z-50 bg-gray-700/50 fixed top-0 left-0 backdrop-blur">
+    <div id="modal"
+        class="hidden justify-center items-center w-screen h-screen z-50 bg-gray-700/50 fixed top-0 left-0 backdrop-blur">
         <div class="bg-gray-100 flex flex-col justify-center items-center p-5 rounded shadow-lg w-full md:w-1/4">
             <div id="confirmationText" class="mt-5"></div>
             <div class="p-6 w-full">
-                <form class="" action="" method="post" id="formDemo">
+                <form class="" action="" method="post" id="confirmationDemo">
                     <div class="flex lg:flex-row md:flex-row sm:flex-col xs:flex-col gap-1 w-full">
                         <div class="w-[150%]">
-                            <input type="email" name="email" id="email"
+                            <input type="email" name="email" id="emailModal"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-2 py-3"
                                 placeholder="email@email.com" required>
-                            <span class="hidden text-center font-bold text-red-500 text-base mt-2" id="invalidEmailAlert">Formato de e-mail inválido!</span>
+                            <span class="hidden text-center font-bold text-red-500 text-base mt-2"
+                                id="invalidModalEmailAlert">Formato de e-mail inválido!</span>
                         </div>
                         <button type="submit" id="modalButton"
                             class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-semibold rounded-lg text-base px-4 py-2.5 text-center">
@@ -54,53 +56,63 @@
                 <div class="flex justify-center items-center text-center sm:text-start">
                     <div class="flex-shrink-0 pb-5 sm:flex sm:pb-0 sm:pe-5">
                         <!-- Avatar Group -->
-                        <div class="mt-5 md:mt-0 flex justify-center -space-x-8 lg:pr-0 md:pr-0 sm:pr-2 xs:pr-2 lg:children:h-14 md:children:h-10 sm:children:h-6 xs:children:h-6 lg:children:w-14 md:children:w-10 sm:children:w-6 xs:children:w-6 children:rounded-full children:object-cover children:ring-2 children:ring-gray-100 md:mr-3 lg:mr-6">
-                            <img class="avatar" src="" alt="user avatar" width="50px" height="50px"/>
-                            <img class="avatar" src="" alt="user avatar" width="50px" height="50px"/>
-                            <img class="avatar" src="" alt="user avatar" width="50px" height="50px"/>
-                            <img class="avatar" src="" alt="user avatar" width="50px" height="50px"/>
-                            <img class="avatar" src="" alt="user avatar" width="50px" height="50px"/>
+                        <div
+                            class="mt-5 md:mt-0 flex justify-center -space-x-8 lg:pr-0 md:pr-0 sm:pr-2 xs:pr-2 lg:children:h-14 md:children:h-10 sm:children:h-6 xs:children:h-6 lg:children:w-14 md:children:w-10 sm:children:w-6 xs:children:w-6 children:rounded-full children:object-cover children:ring-2 children:ring-gray-100 md:mr-3 lg:mr-6">
+                            <img class="avatar" src="" alt="user avatar" width="50px" height="50px" />
+                            <img class="avatar" src="" alt="user avatar" width="50px" height="50px" />
+                            <img class="avatar" src="" alt="user avatar" width="50px" height="50px" />
+                            <img class="avatar" src="" alt="user avatar" width="50px" height="50px" />
+                            <img class="avatar" src="" alt="user avatar" width="50px" height="50px" />
                         </div>
                         <!-- End Avatar Group -->
                     </div>
 
-                    <div class="border-r sm:border-t-0 sm:border-s border-gray-400 w-32 h-px sm:w-auto sm:h-full mx-auto sm:mx-0"></div>
-                    
+                    <div
+                        class="border-r sm:border-t-0 sm:border-s border-gray-400 w-32 h-px sm:w-auto sm:h-full mx-auto sm:mx-0">
+                    </div>
+
                     <div class="pt-0 mb-5 md:mb-0 md:ml-3 lg:ml-6">
                         <div>
                             <p class="text-lg font-semibold text-gray-800">Avaliação Google</p>
                         </div>
                         <div>
-                            <p class="text-sm md:text-base text-gray-500">Recebemos a avaliação máxima de 5 estrelas <br> em mais de
+                            <p class="text-sm md:text-base text-gray-500">Recebemos a avaliação máxima de 5 estrelas
+                                <br> em mais de
                                 110 comentários.</p>
                         </div>
                     </div>
                 </div>
-                <p class="text-center text-base md:text-xl lg:text-2xl text-gray-800 md:py-10">Enviaremos imediatamente uma versão de demonstração para você testar:</p>
+                <p class="text-center text-base md:text-xl lg:text-2xl text-gray-800 md:py-10">Enviaremos imediatamente
+                    uma versão de demonstração para você testar:</p>
                 <!-- End Avatar Group -->
 
                 <!-- Form -->
-                <form>
-                    <div class="mx-auto max-w-2xl md:max-w-4xl sm:flex sm:space-x-3 p-3 bg-white border rounded-lg shadow-lg shadow-gray-100">
+                <form action="" method="post" id="formDemo">
+                    <div
+                        class="mx-auto max-w-2xl md:max-w-4xl sm:flex sm:space-x-3 p-3 bg-white border rounded-lg shadow-lg shadow-gray-100">
                         <div class="sm:flex-[1_0_0%] pb-2 sm:pb-0 border-r border-gray-300">
-                            <label for="hs-hero-name-1" class="block text-sm font-medium"><span class="sr-only">Seu nome</span></label>
-                            <input type="text" id="hs-hero-name-1"
+                            <label for="name" class="block text-sm font-medium"><span class="sr-only">Seu
+                                    nome</span></label>
+                            <input type="text" id="name"
                                 class="py-3 px-4 block w-full border-transparent rounded-lg text-base focus:border-blue-500 focus:ring-blue-500"
                                 placeholder="Seu nome">
+                            <span class="hidden text-center font-bold text-red-500 text-base mt-2"
+                                id="invalidNameAlert">Nome inválido!</span>
                         </div>
                         <div
                             class="pt-2 sm:pt-0 sm:ps-3 border-t border-gray-200 sm:border-t-0 sm:border-s sm:flex-[1_0_0%]">
-                            <label for="hs-hero-email-1" class="block text-sm font-medium"><span class="sr-only">Seu e-mail</span></label>
-                            <input type="email" id="hs-hero-email-1"
+                            <label for="email" class="block text-sm font-medium"><span class="sr-only">Seu
+                                    e-mail</span></label>
+                            <input type="email" id="email"
                                 class="py-3 px-4 block w-full border-transparent rounded-lg text-base focus:border-blue-500 focus:ring-blue-500"
                                 placeholder="Seu e-mail">
+                            <span class="hidden text-center font-bold text-red-500 text-base mt-2"
+                                id="invalidEmailAlert">Formato de e-mail inválido!</span>
                         </div>
-                        <div id="demoBtn" class="sm:flex-[0_0_auto] pt-2 sm:pt-0 grid sm:block">
-                            <a class="py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
-                            href="#">
-                                Receber Planilha Demonstração
-                            </a>
-                        </div>
+                        <button type="submit" id="demoBtn"
+                            class="py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none">
+                            Receber Planilha Demonstração
+                        </button>
                     </div>
                 </form>
                 <!-- <p class="text-red-500 text-xs md:text-base text-center">Por favor, insira um endereço de <span
@@ -147,69 +159,94 @@
     </div>
     <!-- End Hero -->
 
-    <!-- Hero -->
-    <!-- <div class="relative overflow-hidden">
-        <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-10">
-            <div class="max-w-2xl text-center mx-auto">
-                <h1 class="block text-3xl font-bold text-gray-800 sm:text-4xl md:text-5xl">Veja o
-                    <span class="text-blue-600">vídeo</span> <br> da nossa planilha
-                </h1>
-            </div>
-
-            <div class="mt-10 relative max-w-5xl mx-auto">
-                <img src="https://zeplanilha.com/fluxodecaixa/images/Youtube-Video-Mockup.webp" alt="Veja o vídeo">
-
-                <div class="absolute inset-0 w-full top-[43%] md:top-[50%]">
-                    <div class="flex flex-col justify-center items-center">
-                        <a class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-full border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none hover:scale-105 duration-100"
-                            href="#">
-                            <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <polygon points="5 3 19 12 5 21 5 3" />
-                            </svg>
-                            Clique para assistir
-                        </a>
+    <!-- Video Page -->
+    <div id="videoPage" class="hidden absolute top-0 left-0 w-screen h-screen z-30 bg-white">
+        <!-- Hero -->
+        <div class="relative overflow-hidden">
+            <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-10">
+                <!-- Header -->
+                <div aria-label="logo" class="flex justify-center items-center space-x-2">
+                    <img src="./4_300px.png"
+                        alt="Logo Zé Planilha" width="80" height="20">
+                </div>
+                <div class="max-w-3xl text-center mx-auto mt-10">
+                    <p id="userNamePageDemo" class="text-lg text-gray-700">, estamos preparando tudo para você! Seu email com a planilha de
+                        demonstração será disparado em 3 minutos. Aproveite esse tempo para assistir ao vídeo rápido de
+                        1 min abaixo e entender como maximizar o uso da planilha.</p>
+                </div>
+                <div class="mt-10 relative max-w-3xl mx-auto">
+                    <img src="https://zeplanilha.com/fluxodecaixa/images/Youtube-Video-Mockup.webp" alt="Veja o vídeo">
+                    <div class="absolute inset-0 w-full top-[43%] md:top-[50%]">
+                        <div class="flex flex-col justify-center items-center">
+                            <a class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-full border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none hover:scale-105 duration-100"
+                                href="#">
+                                <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24"
+                                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon points="5 3 19 12 5 21 5 3" />
+                                </svg>
+                                Clique para assistir
+                            </a>
+                        </div>
                     </div>
-                </div>
-
-                <div
-                    class="absolute bottom-12 -start-20 -z-[1] size-48 bg-gradient-to-b from-orange-500 to-white p-px rounded-lg">
-                    <div class="bg-white size-48 rounded-lg"></div>
-                </div>
-
-                <div
-                    class="absolute -top-12 -end-20 -z-[1] size-48 bg-gradient-to-t from-blue-600 to-cyan-400 p-px rounded-full">
-                    <div class="bg-white size-48 rounded-full"></div>
+                    <div
+                        class="absolute bottom-12 -start-20 -z-[1] size-48 bg-gradient-to-b from-orange-500 to-white p-px rounded-lg">
+                        <div class="bg-white size-48 rounded-lg"></div>
+                    </div>
+                    <div
+                        class="absolute -top-12 -end-20 -z-[1] size-48 bg-gradient-to-t from-blue-600 to-cyan-400 p-px rounded-full">
+                        <div class="bg-white size-48 rounded-full"></div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div> -->
-    <!-- End Hero -->
-    <footer class="mt-20 w-full max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto">
+        <!-- End Hero -->
+    </div>
+
+    <footer class="absolute bottom-0 mt-20 w-full py-6 px-4 sm:px-6 lg:px-8 mx-auto z-50">
         <!-- Grid -->
         <div class="grid grid-cols-1 md:grid-cols-3 items-center gap-5">
             <div class="flex justify-center md:justify-start items-center">
-                <img src="https://zeplanilha.com/fluxodecaixa/images/fluxodecaixa/3_200px.webp" alt="Logo Zé Planilha" width="100px" class="md:w-48">
+                <img src="https://zeplanilha.com/fluxodecaixa/images/fluxodecaixa/3_200px.webp" alt="Logo Zé Planilha"
+                    width="100px" class="md:w-44">
             </div>
             <!-- End Col -->
 
-            <p class="text-sm md:text-base text-center">© 2024 MATHEUS L. Q. G. SOARES INFORMATICA LTDA CNPJ: 49.647.463/0001-39</p>
+            <p class="text-xs text-gray-600 md:text-base text-center">© 2024 MATHEUS L. Q. G. SOARES INFORMATICA LTDA
+                CNPJ: 49.647.463/0001-39</p>
             <!-- End Col -->
 
             <!-- Social Brands -->
             <div class="flex justify-center items-center md:justify-end space-x-2">
                 <a class="w-8 h-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-500 hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
                     href="https://www.zeplanilha.com/" target="_blank">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 20 20"><g fill="currentColor"><path fill-rule="evenodd" d="M17.5 1h-15A2.5 2.5 0 0 0 0 3.5v10A2.5 2.5 0 0 0 2.5 16h15a2.5 2.5 0 0 0 2.5-2.5v-10A2.5 2.5 0 0 0 17.5 1M2 3.5a.5.5 0 0 1 .5-.5h15a.5.5 0 0 1 .5.5v10a.5.5 0 0 1-.5.5h-15a.5.5 0 0 1-.5-.5z" clip-rule="evenodd"/><path d="M10 13.75a.75.75 0 1 1 0-1.5a.75.75 0 0 1 0 1.5"/><path fill-rule="evenodd" d="M11.5 14.5h-3a1 1 0 0 0-1 1V18a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-2.5a1 1 0 0 0-1-1m-2.5 3V16h2v1.5z" clip-rule="evenodd"/><path d="M5.5 19.5a1 1 0 1 1 0-2h9a1 1 0 1 1 0 2z"/><path fill-rule="evenodd" d="M19 12H1v-1h18z" clip-rule="evenodd"/></g></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 20 20">
+                        <g fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M17.5 1h-15A2.5 2.5 0 0 0 0 3.5v10A2.5 2.5 0 0 0 2.5 16h15a2.5 2.5 0 0 0 2.5-2.5v-10A2.5 2.5 0 0 0 17.5 1M2 3.5a.5.5 0 0 1 .5-.5h15a.5.5 0 0 1 .5.5v10a.5.5 0 0 1-.5.5h-15a.5.5 0 0 1-.5-.5z"
+                                clip-rule="evenodd" />
+                            <path d="M10 13.75a.75.75 0 1 1 0-1.5a.75.75 0 0 1 0 1.5" />
+                            <path fill-rule="evenodd"
+                                d="M11.5 14.5h-3a1 1 0 0 0-1 1V18a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-2.5a1 1 0 0 0-1-1m-2.5 3V16h2v1.5z"
+                                clip-rule="evenodd" />
+                            <path d="M5.5 19.5a1 1 0 1 1 0-2h9a1 1 0 1 1 0 2z" />
+                            <path fill-rule="evenodd" d="M19 12H1v-1h18z" clip-rule="evenodd" />
+                        </g>
+                    </svg>
                 </a>
                 <a class="w-8 h-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-500 hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
                     href="https://www.youtube.com/@ze.planilha/videos" target="_blank">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24"><path fill="currentColor" d="m10 15l5.19-3L10 9zm11.56-7.83c.13.47.22 1.1.28 1.9c.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83c-.25.9-.83 1.48-1.73 1.73c-.47.13-1.33.22-2.65.28c-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44c-.9-.25-1.48-.83-1.73-1.73c-.13-.47-.22-1.1-.28-1.9c-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83c.25-.9.83-1.48 1.73-1.73c.47-.13 1.33-.22 2.65-.28c1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44c.9.25 1.48.83 1.73 1.73"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="m10 15l5.19-3L10 9zm11.56-7.83c.13.47.22 1.1.28 1.9c.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83c-.25.9-.83 1.48-1.73 1.73c-.47.13-1.33.22-2.65.28c-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44c-.9-.25-1.48-.83-1.73-1.73c-.13-.47-.22-1.1-.28-1.9c-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83c.25-.9.83-1.48 1.73-1.73c.47-.13 1.33-.22 2.65-.28c1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44c.9.25 1.48.83 1.73 1.73" />
+                    </svg>
                 </a>
                 <a class="w-8 h-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-500 hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
                     href="https://www.instagram.com/ze.planilha/" target="_blank">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="1.3em" height="1.3em" viewBox="0 0 24 24"><path fill="currentColor" d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1.3em" height="1.3em" viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3" />
+                    </svg>
                 </a>
             </div>
             <!-- End Social Brands -->
