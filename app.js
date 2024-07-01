@@ -14,6 +14,7 @@ const invalidModalEmailAlert = document.querySelector("#invalidModalEmailAlert")
 const videoPage = document.querySelector("#videoPage");
 const userNamePageDemo = document.querySelector("#userNamePageDemo");
 const playBtn = document.querySelector("#playBtn");
+const fullVersionBtn = document.querySelector("#fullVersionBtn");
 
 export default function pageDemoName(name) {
     userNamePageDemo.insertAdjacentHTML("afterbegin", `
@@ -106,6 +107,7 @@ modalButton?.addEventListener("click", function modalButtonClickFunction(event) 
 
     if(emailValidator(confirmedEmail) == false) {
         invalidModalEmailAlert.classList.remove('hidden');
+        invalidModalEmailAlert.classList.add('block');
         return
     }
     invalidModalEmailAlert.classList.add('hidden');
@@ -130,11 +132,51 @@ modalButton?.addEventListener("click", function modalButtonClickFunction(event) 
     // )
     // .catch(error => console.log(error))
     this.removeEventListener("click", modalButtonClickFunction);
+});
+
+let player;
+
+document.getElementById('thumbnail').addEventListener('click', function onYouTubeIframeAPIReady() {
+    // Cria um novo player
+    player = new YT.Player('player-container', {
+        videoId: 'jJP3zvxqrPI', // ID do vídeo do YouTube
+        playerVars: {
+            'rel': 0, // Desativa sugestões de vídeos relacionados
+            'showinfo': 0, // Não mostra informações do vídeo (incluindo logo do YouTube)
+            'autoplay': 1, // Autoplay desativado
+            'controls': 0, // Controles do player ativados
+        },
+        events: {
+        'onUnpause': function() {
+            player.relatedVideoSuggestions.set('display', false);
+        }
+        }
+    });
+    
+    document.getElementById('thumbnail').style.display = 'none';
+});
+
+document.getElementById('thumbnailPlay').addEventListener('click', function onYouTubeIframeAPIReady() {
+    // Cria um novo player
+    player = new YT.Player('player-container', {
+        videoId: 'jJP3zvxqrPI', // ID do vídeo do YouTube
+        playerVars: {
+            'rel': 0, // Desativa sugestões de vídeos relacionados
+            'showinfo': 0, // Não mostra informações do vídeo (incluindo logo do YouTube)
+            'autoplay': 1, // Autoplay desativado
+            'controls': 0, // Controles do player ativados
+        },
+        events: {
+        'onUnpause': function() {
+            player.relatedVideoSuggestions.set('display', false);
+        }
+        }
+    });
+    
+    document.getElementById('thumbnail').style.display = 'none';
+});
+
+
+fullVersionBtn.addEventListener("click", () => {
+    fullVersionBtn.setAttribute("href", `https://seguro.zeplanilha.com/r/ABE0WSGLNP?${path}&utm_medium=LP1dobra`)
 })
-
-
-if (playBtn) {
-    playBtn.addEventListener("click", () => {
-        console.log(playBtn)
-    })
-}

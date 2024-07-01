@@ -25,14 +25,16 @@
                             <input type="email" name="email" id="emailModal"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-2 py-3"
                                 placeholder="email@email.com" required>
-                            <span class="hidden text-center font-bold text-red-500 text-base mt-2"
-                                id="invalidModalEmailAlert">Formato de e-mail inválido!</span>
+                            
                         </div>
                         <button type="submit" id="modalButton"
                             class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-semibold rounded-lg text-base px-4 py-2.5 text-center">
                             OK
                         </button>
                     </div>
+                    <span class="hidden text-center font-bold text-red-500 text-base mt-5"
+                        id="invalidModalEmailAlert">Por favor, insira um endereço de <span
+                        class="font-semibold">e-mail válido</span>, pois é para ele que enviaremos a planilha.</span>
                 </form>
             </div>
         </div>
@@ -78,7 +80,8 @@
                         <div>
                             <p class="text-sm md:text-base text-gray-500">Recebemos a avaliação máxima de 5 estrelas
                                 <br> em mais de
-                                110 comentários.</p>
+                                110 comentários.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -115,9 +118,6 @@
                         </button>
                     </div>
                 </form>
-                <!-- <p class="text-red-500 text-xs md:text-base text-center">Por favor, insira um endereço de <span
-                        class="font-semibold">e-mail válido</span>, pois é para ele que enviaremos a planilha.</p> -->
-                <!-- End Form -->
 
                 <!-- SVG Element -->
                 <div class="hidden absolute top-2/4 left-0 transform -translate-y-2/4 -translate-x-full md:block"
@@ -166,28 +166,28 @@
             <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-10">
                 <!-- Header -->
                 <div aria-label="logo" class="flex justify-center items-center space-x-2">
-                    <img src="./4_300px.png"
-                        alt="Logo Zé Planilha" width="80" height="20">
+                    <img src="./4_300px.png" alt="Logo Zé Planilha" width="80" height="20">
                 </div>
                 <div class="max-w-3xl text-center mx-auto mt-10">
-                    <p id="userNamePageDemo" class="text-lg text-gray-700">, estamos preparando tudo para você! Seu email com a planilha de
+                    <p id="userNamePageDemo" class="text-lg text-gray-800">, estamos preparando tudo para você! Seu
+                        email com a planilha de
                         demonstração será disparado em 3 minutos. Aproveite esse tempo para assistir ao vídeo rápido de
                         1 min abaixo e entender como maximizar o uso da planilha.</p>
                 </div>
-                <div class="mt-10 relative max-w-3xl mx-auto">
-                    <img src="https://zeplanilha.com/fluxodecaixa/images/Youtube-Video-Mockup.webp" alt="Veja o vídeo">
-                    <div class="absolute inset-0 w-full top-[43%] md:top-[50%]">
-                        <div class="flex flex-col justify-center items-center">
-                            <a class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-full border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none hover:scale-105 duration-100"
-                                href="#">
-                                <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24"
-                                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round">
-                                    <polygon points="5 3 19 12 5 21 5 3" />
-                                </svg>
-                                Clique para assistir
-                            </a>
-                        </div>
+                <div class="mt -5 2xl:mt-10 relative w-full md:max-w-xl 2xl:max-w-3xl  mx-auto">
+                    <div class="relative w-full h-auto aspect-video" id="player-container">
+                        <img class="w-full drop-shadow-md" id="thumbnail"
+                            src="https://zeplanilha.com/fluxodecaixa/images/Youtube-Video-Mockup.webp"
+                            alt="Thumbnail do Vídeo">
+                        <button id="thumbnailPlay"
+                            class="absolute top-1/2 left-[40%] py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-full border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none hover:scale-105 duration-100">
+                            <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="5 3 19 12 5 21 5 3" />
+                            </svg>
+                            Clique para assistir
+                        </button>
                     </div>
                     <div
                         class="absolute bottom-12 -start-20 -z-[1] size-48 bg-gradient-to-b from-orange-500 to-white p-px rounded-lg">
@@ -199,6 +199,15 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="flex flex-col justify-center items-center">
+            <p class="text-lg font-semibold mb-5 mt-2 2xl:mt-6 text-gray-800">
+                Já entendi que essa planilha é perfeita para mim,
+            </p>
+            <a id="fullVersionBtn" href=""
+                class="py-3 px-4 inline-flex justify-center items-center gap-x-2 text-base font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none">
+                Quero fazer a compra da versão desbloqueada
+            </a>
         </div>
         <!-- End Hero -->
     </div>
@@ -255,6 +264,7 @@
     </footer>
     <script type="module" src="./app.js"></script>
     <script src="./node_modules/preline/dist/preline.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
 </body>
 
 </html>
