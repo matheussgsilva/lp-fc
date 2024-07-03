@@ -119,9 +119,7 @@ modalButton?.addEventListener("click", function modalButtonClickFunction(event) 
         body: JSON.stringify(dataUtm)
     })
     .then(res => res.json())
-    .then(alert("Erro ao enviar o e-mail tente novamente!")
-    )
-    .catch(error => console.log(error))
+    .catch(error => console.log(error), alert("Erro ao enviar o e-mail tente novamente!"))
     this.removeEventListener("click", modalButtonClickFunction);
 });
 
