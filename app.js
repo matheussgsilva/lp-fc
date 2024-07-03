@@ -2,7 +2,6 @@ import "./assets/app.css";
 
 const avatar = document.querySelectorAll(".avatar");
 const modal = document.querySelector("#modal");
-const demoBtn = document.querySelector("#demoBtn");
 const confirmationText = document.querySelector("#confirmationText");
 const formDemo = document.querySelector("#formDemo");
 const modalButton = document.querySelector("#modalButton");
@@ -13,8 +12,13 @@ const emailModal = document.querySelector("#emailModal");
 const invalidModalEmailAlert = document.querySelector("#invalidModalEmailAlert");
 const videoPage = document.querySelector("#videoPage");
 const userNamePageDemo = document.querySelector("#userNamePageDemo");
-const playBtn = document.querySelector("#playBtn");
 const fullVersionBtn = document.querySelector("#fullVersionBtn");
+
+// window.onload = function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+//     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+//     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+//     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+//     }(window,document,'script','dataLayer','GTM-TCR5WHF');
 
 export default function pageDemoName(name) {
     userNamePageDemo.insertAdjacentHTML("afterbegin", `
@@ -68,10 +72,7 @@ function nameValidator(name) {
 
 formDemo?.addEventListener("submit", function formDemoSubmit(event) {
     event.preventDefault();
-    
-    // const formData = new FormData(formDemo);
-    // const data = Object.fromEntries(formData);
-    
+
     const userName = formDemo.name.value;
     const userEmail = formDemo.email.value;
 
@@ -96,8 +97,6 @@ formDemo?.addEventListener("submit", function formDemoSubmit(event) {
     this.removeEventListener("click", formDemoSubmit);
 });
 
-
-
 modalButton?.addEventListener("click", function modalButtonClickFunction(event) {
     event.preventDefault();
 
@@ -113,24 +112,18 @@ modalButton?.addEventListener("click", function modalButtonClickFunction(event) 
     invalidModalEmailAlert.classList.add('hidden');
 
     pageDemoName(userName)
-
-    // modal.classList.remove("hidden");
-    // modal.classList.add("flex");
-    // confirmationText.insertAdjacentHTML("afterbegin", `
-    //     <p class="text-center text-lg font-semibold">${userName}, confirme seu e-mail</p>`)
-    //
-    // fetch('https://hook.us1.make.com/xa19wkix3pasn4bsud3dvkxip8sznma3', {
-    //     method: 'POST',
-    //     headers: {
-    //         'Content-Type': 'application/json'
-    //     },
-    //     body: JSON.stringify(dataUtm)
-    // })
-    // .then(res => res.json())
-    // .then(alert(),
-    //     disableButton()
-    // )
-    // .catch(error => console.log(error))
+    
+    fetch('https://hook.us1.make.com/xa19wkix3pasn4bsud3dvkxip8sznma3', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(dataUtm)
+    })
+    .then(res => res.json())
+    .then(alert()
+    )
+    .catch(error => console.log(error))
     this.removeEventListener("click", modalButtonClickFunction);
 });
 
@@ -175,7 +168,6 @@ document.getElementById('thumbnailPlay').addEventListener('click', function onYo
     
     document.getElementById('thumbnail').style.display = 'none';
 });
-
 
 fullVersionBtn.addEventListener("click", () => {
     fullVersionBtn.setAttribute("href", `https://seguro.zeplanilha.com/r/ABE0WSGLNP?${path}&utm_medium=LP1dobra`)
