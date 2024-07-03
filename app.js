@@ -30,7 +30,7 @@ export default function pageDemoName(name) {
 };
 
 const url = new URL(window.location);
-const path = url.search === '' ? '?utm_source=direto&utm_campaign=direto&utm_term=direto' : url.search;
+const path = url.search === '' ? '?utm_source=direto&utm_campaign=direto&utm_term=direto&utm_medium=LP1dobra' : url.search;
 
 window.onload = function showAvatar() {
     const maxNumbers = 9;
