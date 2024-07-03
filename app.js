@@ -14,11 +14,11 @@ const videoPage = document.querySelector("#videoPage");
 const userNamePageDemo = document.querySelector("#userNamePageDemo");
 const fullVersionBtn = document.querySelector("#fullVersionBtn");
 
-// window.onload = function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-//     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-//     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-//     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-//     }(window,document,'script','dataLayer','GTM-TCR5WHF');
+window.onload = function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    }(window,document,'script','dataLayer','GTM-TCR5WHF');
 
 export default function pageDemoName(name) {
     userNamePageDemo.insertAdjacentHTML("afterbegin", `
@@ -31,8 +31,6 @@ export default function pageDemoName(name) {
 
 const url = new URL(window.location);
 const path = url.search === '' ? '?utm_source=direto&utm_campaign=direto&utm_term=direto' : url.search;
-
-
 
 window.onload = function showAvatar() {
     const maxNumbers = 9;
@@ -121,7 +119,7 @@ modalButton?.addEventListener("click", function modalButtonClickFunction(event) 
         body: JSON.stringify(dataUtm)
     })
     .then(res => res.json())
-    .then(alert()
+    .then(alert("Erro ao enviar o e-mail tente novamente!")
     )
     .catch(error => console.log(error))
     this.removeEventListener("click", modalButtonClickFunction);
