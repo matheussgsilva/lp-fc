@@ -22,7 +22,8 @@ window.onload = function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 
 export default function pageDemoName(name) {
     userNamePageDemo.insertAdjacentHTML("afterbegin", `
-        <span class="text-lg font-semibold">${name}</span>
+        <p  class="text-lg text-gray-800"><span class="text-lg font-semibold">${name}</span>, estamos preparando tudo para você! Seu email com a planilha de demonstração será disparado em 3 minutos. Aproveite esse tempo para assistir ao vídeo rápido de 1 min abaixo e entender como maximizar o uso da planilha.</p>
+        
     `)
 
     modal.classList.add("hidden");
@@ -108,8 +109,6 @@ modalButton?.addEventListener("click", function modalButtonClickFunction(event) 
         return
     }
     invalidModalEmailAlert.classList.add('hidden');
-
-    pageDemoName(userName)
     
     fetch('https://hook.us1.make.com/xa19wkix3pasn4bsud3dvkxip8sznma3', {
         method: 'POST',
@@ -118,8 +117,9 @@ modalButton?.addEventListener("click", function modalButtonClickFunction(event) 
         },
         body: JSON.stringify(dataUtm)
     })
-    .then(res => res.json())
-    .catch(error => console.log(error), alert("Erro ao enviar o e-mail tente novamente!"))
+    .then(res => console.log(res.status))
+    .then(pageDemoName(userName))
+    .catch(error => console.error(error))
     this.removeEventListener("click", modalButtonClickFunction);
 });
 
@@ -128,7 +128,7 @@ let player;
 document.getElementById('thumbnail').addEventListener('click', function onYouTubeIframeAPIReady() {
     // Cria um novo player
     player = new YT.Player('player-container', {
-        videoId: 'jJP3zvxqrPI', // ID do vídeo do YouTube
+        videoId: 'xUZtijx0WRM', // ID do vídeo do YouTube
         playerVars: {
             'rel': 0, // Desativa sugestões de vídeos relacionados
             'showinfo': 0, // Não mostra informações do vídeo (incluindo logo do YouTube)
@@ -148,7 +148,7 @@ document.getElementById('thumbnail').addEventListener('click', function onYouTub
 document.getElementById('thumbnailPlay').addEventListener('click', function onYouTubeIframeAPIReady() {
     // Cria um novo player
     player = new YT.Player('player-container', {
-        videoId: 'jJP3zvxqrPI', // ID do vídeo do YouTube
+        videoId: 'xUZtijx0WRM', // ID do vídeo do YouTube
         playerVars: {
             'rel': 0, // Desativa sugestões de vídeos relacionados
             'showinfo': 0, // Não mostra informações do vídeo (incluindo logo do YouTube)

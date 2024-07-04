@@ -37,13 +37,13 @@
     <!-- Modal -->
     <div id="modal"
         class="hidden justify-center items-center w-screen h-screen z-50 bg-gray-700/50 fixed top-0 left-0 backdrop-blur">
-        <div class="bg-gray-100 flex flex-col justify-center items-center p-5 rounded shadow-lg w-full md:w-1/4">
+        <div class="bg-gray-100 flex flex-col justify-center items-center p-5 rounded shadow-lg w-full md:w-3/4 lg:w-2/6">
             <div id="confirmationText" class="mt-5"></div>
             <div class="p-6 w-full">
                 <form class="" action="" method="post" id="confirmationDemo">
                     <div class="flex lg:flex-row md:flex-row sm:flex-col xs:flex-col gap-1 w-full">
                         <div class="w-[150%]">
-                            <input type="email" name="email" id="emailModal"
+                            <input type="text" name="email" id="emailModal"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-2 py-3"
                                 placeholder="email@email.com" required>
                             
@@ -127,7 +127,7 @@
                             class="pt-2 sm:pt-0 sm:ps-3 border-t border-gray-200 sm:border-t-0 sm:border-s sm:flex-[1_0_0%]">
                             <label for="email" class="block text-sm font-medium"><span class="sr-only">Seu
                                     e-mail</span></label>
-                            <input type="email" id="email"
+                            <input type="text" id="email"
                                 class="py-3 px-4 block w-full border-transparent rounded-lg text-base focus:border-blue-500 focus:ring-blue-500"
                                 placeholder="Seu e-mail">
                             <span class="hidden text-center font-bold text-red-500 text-base mt-2"
@@ -189,11 +189,8 @@
                 <div aria-label="logo" class="flex justify-center items-center space-x-2">
                     <img src="./4_300px.png" alt="Logo Zé Planilha" width="80" height="20">
                 </div>
-                <div class="max-w-3xl text-center mx-auto mt-10">
-                    <p id="userNamePageDemo" class="text-lg text-gray-800">, estamos preparando tudo para você! Seu
-                        email com a planilha de
-                        demonstração será disparado em 3 minutos. Aproveite esse tempo para assistir ao vídeo rápido de
-                        1 min abaixo e entender como maximizar o uso da planilha.</p>
+                <div class="max-w-3xl text-center mx-auto mt-10" id="userNamePageDemo">
+                    
                 </div>
                 <div class="mt -5 2xl:mt-10 relative w-full md:max-w-xl 2xl:max-w-3xl  mx-auto">
                     <div class="relative w-full h-auto aspect-video" id="player-container">
