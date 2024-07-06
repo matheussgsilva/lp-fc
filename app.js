@@ -26,31 +26,6 @@ window.onload = function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 const url = new URL(window.location);
 const path = url.search === '' ? '?utm_source=direto&utm_campaign=direto&utm_term=direto&utm_medium=LP1dobra' : url.search;
 
-window.onload = function showAvatar() {
-    const maxNumbers = 9;
-    let list = [];
-    
-    for (let i = 0; i < maxNumbers; i++) {
-        list[i] = i + 1;
-    }
-    
-    let randomNumber;
-    let tmp;
-
-    for (let i = list.length; i;) {
-        randomNumber = Math.random() * i-- | 0;
-        tmp = list[randomNumber];
-        // troca o número aleatório pelo atual
-        list[randomNumber] = list[i];
-        // troca o atual pelo aleatório
-        list[i] = tmp;
-    }
-
-    for(let i=0; i<5; i++){
-        avatar[i]?.setAttribute("src", `./images/avatars/${list[i]}.webp`)
-    }
-};
-
 function isOverlaying(fixedElement, otherElement) {
     const fixedRect = fixedElement.getBoundingClientRect();
     const otherRect = otherElement.getBoundingClientRect();
@@ -69,7 +44,7 @@ if (isOverlaying(footer, formDemo)) {
 
 export default function pageDemoName(name) {
     userNamePageDemo.insertAdjacentHTML("afterbegin", `
-        <p  class="text-lg text-gray-800"><span class="text-lg font-semibold">${name}</span>, estamos preparando tudo para você! Seu email com a planilha de demonstração será disparado em 3 minutos. Aproveite esse tempo para assistir ao vídeo rápido de 1 min abaixo e entender como maximizar o uso da planilha.</p>
+        <p class="text-lg text-gray-800"><span class="text-lg font-semibold">${name}</span>, estamos preparando tudo para você! Seu email com a planilha de demonstração será disparado em 3 minutos. Aproveite esse tempo para assistir ao vídeo rápido de 1 min abaixo e entender como maximizar o uso da planilha.</p>
         
     `)
 
