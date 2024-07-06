@@ -1,6 +1,5 @@
 import "./assets/app.css";
 
-const avatar = document.querySelectorAll(".avatar");
 const modal = document.querySelector("#modal");
 const confirmationText = document.querySelector("#confirmationText");
 const formDemo = document.querySelector("#formDemo");
@@ -16,12 +15,6 @@ const fullVersionBtn = document.querySelector("#fullVersionBtn");
 const firstPage = document.querySelector("#firstPage");
 const footer = document.querySelector("#footer");
 const fullVersionSection = document.querySelector("#fullVersionSection");
-
-window.onload = function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    }(window,document,'script','dataLayer','GTM-TCR5WHF');
 
 const url = new URL(window.location);
 const path = url.search === '' ? '?utm_source=direto&utm_campaign=direto&utm_term=direto&utm_medium=LP1dobra' : url.search;
@@ -41,6 +34,12 @@ function isOverlaying(fixedElement, otherElement) {
 if (isOverlaying(footer, formDemo)) {
     footer.classList.remove("fixed")
 };
+
+window.onload = function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    }(window,document,'script','dataLayer','GTM-TCR5WHF');
 
 export default function pageDemoName(name) {
     userNamePageDemo.insertAdjacentHTML("afterbegin", `
