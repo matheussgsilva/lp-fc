@@ -13,22 +13,15 @@ const invalidModalEmailAlert = document.querySelector("#invalidModalEmailAlert")
 const videoPage = document.querySelector("#videoPage");
 const userNamePageDemo = document.querySelector("#userNamePageDemo");
 const fullVersionBtn = document.querySelector("#fullVersionBtn");
+const firstPage = document.querySelector("#firstPage");
+const footer = document.querySelector("#footer");
+const fullVersionSection = document.querySelector("#fullVersionSection");
 
 window.onload = function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     }(window,document,'script','dataLayer','GTM-TCR5WHF');
-
-export default function pageDemoName(name) {
-    userNamePageDemo.insertAdjacentHTML("afterbegin", `
-        <p  class="text-lg text-gray-800"><span class="text-lg font-semibold">${name}</span>, estamos preparando tudo para você! Seu email com a planilha de demonstração será disparado em 3 minutos. Aproveite esse tempo para assistir ao vídeo rápido de 1 min abaixo e entender como maximizar o uso da planilha.</p>
-        
-    `)
-
-    modal.classList.add("hidden");
-    videoPage.classList.remove("hidden");
-};
 
 const url = new URL(window.location);
 const path = url.search === '' ? '?utm_source=direto&utm_campaign=direto&utm_term=direto&utm_medium=LP1dobra' : url.search;
@@ -54,9 +47,40 @@ window.onload = function showAvatar() {
     }
 
     for(let i=0; i<5; i++){
-        avatar[i]?.setAttribute("src", `./images/avatars/${list[i]}.png`)
+        avatar[i]?.setAttribute("src", `./images/avatars/${list[i]}.webp`)
     }
-}
+};
+
+function isOverlaying(fixedElement, otherElement) {
+    const fixedRect = fixedElement.getBoundingClientRect();
+    const otherRect = otherElement.getBoundingClientRect();
+
+    return (
+        fixedRect.top <= otherRect.bottom &&
+        fixedRect.right >= otherRect.left &&
+        fixedRect.bottom >= otherRect.top &&
+        fixedRect.left <= otherRect.right
+    );
+};
+
+if (isOverlaying(footer, formDemo)) {
+    footer.classList.remove("fixed")
+};
+
+export default function pageDemoName(name) {
+    userNamePageDemo.insertAdjacentHTML("afterbegin", `
+        <p  class="text-lg text-gray-800"><span class="text-lg font-semibold">${name}</span>, estamos preparando tudo para você! Seu email com a planilha de demonstração será disparado em 3 minutos. Aproveite esse tempo para assistir ao vídeo rápido de 1 min abaixo e entender como maximizar o uso da planilha.</p>
+        
+    `)
+
+    modal.classList.add("hidden");
+    videoPage.classList.remove("hidden");
+    firstPage.classList.add("hidden");
+
+    if (isOverlaying(footer, fullVersionSection)) {
+        footer.classList.remove("fixed")
+    };
+};
 
 function emailValidator(email) {
     let emailPattern = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
@@ -67,7 +91,6 @@ function nameValidator(name) {
     let namePattern = /^[a-zA-ZÀ-ú ]*$/;
     return namePattern.test(name);
 };
-
 
 formDemo?.addEventListener("submit", function formDemoSubmit(event) {
     event.preventDefault();
@@ -167,4 +190,4 @@ document.getElementById('thumbnailPlay').addEventListener('click', function onYo
 
 fullVersionBtn.addEventListener("click", () => {
     fullVersionBtn.setAttribute("href", `https://seguro.zeplanilha.com/r/ABE0WSGLNP?${path}&utm_medium=LP1dobra`)
-})
+});

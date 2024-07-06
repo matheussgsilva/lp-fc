@@ -8,6 +8,7 @@ module.exports = {
     darkMode: "class", // or 'media' or 'class'
     theme: {
         screens: {
+            xs: "380px",
             sm: "640px",
             md: "768px",
             lg: "1024px",
@@ -567,7 +568,7 @@ module.exports = {
             },
             bounce: {
                 "0%, 100%": {
-                    transform: "translateY(-25%)",
+                    transform: "scale(1.2)",
                     animationTimingFunction: "cubic-bezier(0.8,0,1,1)",
                 },
                 "50%": {
